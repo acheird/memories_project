@@ -1,5 +1,7 @@
 import { useState } from "react";
 import FileBase from "react-file-base64";
+import { useDispatch } from "react-redux";
+import { createPost } from "../../actions/posts";
 
 const Form = () => {
   const [postData, setPostData] = useState({
@@ -9,10 +11,11 @@ const Form = () => {
     tags: "",
     selectedFile: "",
   });
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
+    dispatch(createPost(postData));
   };
 
   const clear = () => {
