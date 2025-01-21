@@ -30,9 +30,12 @@ const Form = ({ currentId, setCurrentId }) => {
     } else {
       dispatch(createPost(postData));
     }
+
+    clear();
   };
 
   const clear = () => {
+    setCurrentId(null);
     setPostData({
       creator: "",
       title: "",
@@ -51,7 +54,7 @@ const Form = ({ currentId, setCurrentId }) => {
         onSubmit={handleSubmit}
       >
         <h6 className="text-2xl font-semibold text-center text-gray-800">
-          Creating a Memory
+          {currentId ? "Editing" : "Creating"} a Memory
         </h6>
 
         {/* Creator Input */}
