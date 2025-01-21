@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getPosts } from "./actions/posts";
 
@@ -7,6 +7,7 @@ import Posts from "./components/Posts/Posts";
 import Form from "./components/Form/Form";
 
 const App = () => {
+  const [currentId, setCurrentId] = useState(null);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,12 +28,12 @@ const App = () => {
       <div className="flex flex-col md:flex-row gap-6">
         {/* Posts Section */}
         <div className="flex-1">
-          <Posts />
+          <Posts setCurrentId={setCurrentId} />
         </div>
 
         {/* Form Section */}
         <div className="w-full md:w-1/3">
-          <Form />
+          <Form currentId={currentId} setCurrentId={setCurrentId} />
         </div>
       </div>
     </div>

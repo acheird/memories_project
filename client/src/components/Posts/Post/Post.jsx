@@ -2,7 +2,7 @@
 import moment from "moment";
 import { ThumbUpAlt, Delete, MoreHoriz } from "@material-ui/icons";
 
-const Post = ({ post }) => {
+const Post = ({ post, setCurrentId }) => {
   return (
     <div className="flex flex-col justify-between rounded-lg shadow-lg overflow-hidden h-full relative bg-white">
       {/* Image Section */}
@@ -26,7 +26,7 @@ const Post = ({ post }) => {
       <div className="absolute top-4 right-4 text-white">
         <button
           className="bg-transparent text-white hover:text-gray-300 focus:outline-none"
-          onClick={() => {}}
+          onClick={() => setCurrentId(post._id)}
         >
           <MoreHoriz fontSize="small" />
         </button>

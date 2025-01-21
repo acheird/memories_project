@@ -1,7 +1,9 @@
 import { useSelector } from "react-redux";
+
 import Post from "./Post/Post";
 
-const Posts = () => {
+// eslint-disable-next-line react/prop-types
+const Posts = ({ setCurrentId }) => {
   const posts = useSelector((state) => state.posts);
 
   if (!posts || posts.length === 0) {
@@ -36,7 +38,7 @@ const Posts = () => {
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-4">
       {posts.map((post) => (
         <div key={post._id || post.id} className="col-span-1">
-          <Post post={post} />
+          <Post post={post} setCurrentId={setCurrentId} />
         </div>
       ))}
     </div>
