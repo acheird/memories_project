@@ -2,7 +2,7 @@
 import moment from "moment";
 import { ThumbUpAlt, Delete, MoreHoriz } from "@material-ui/icons";
 import { useDispatch } from "react-redux";
-import { deletePost } from "../../../actions/posts";
+import { deletePost, likePost } from "../../../actions/posts";
 const Post = ({ post, setCurrentId }) => {
   const dispatch = useDispatch();
   return (
@@ -53,7 +53,7 @@ const Post = ({ post, setCurrentId }) => {
       <div className="px-4 py-2 flex justify-between items-center border-t border-gray-200">
         <button
           className="flex items-center text-blue-500 hover:text-blue-700"
-          onClick={() => {}}
+          onClick={() => dispatch(likePost(post._id))}
         >
           <ThumbUpAlt fontSize="small" className="mr-1" />
           Like
