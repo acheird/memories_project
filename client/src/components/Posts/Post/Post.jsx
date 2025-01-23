@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 import moment from "moment";
 import { ThumbUpAlt, Delete, MoreHoriz } from "@material-ui/icons";
-
+import { useDispatch } from "react-redux";
+import { deletePost } from "../../../actions/posts";
 const Post = ({ post, setCurrentId }) => {
+  const dispatch = useDispatch();
   return (
     <div className="flex flex-col justify-between rounded-lg shadow-lg overflow-hidden h-full relative bg-white">
       {/* Image Section */}
@@ -59,7 +61,7 @@ const Post = ({ post, setCurrentId }) => {
         </button>
         <button
           className="flex items-center text-red-500 hover:text-red-700"
-          onClick={() => {}}
+          onClick={() => dispatch(deletePost(post._id))}
         >
           <Delete fontSize="small" className="mr-1" />
           Delete
