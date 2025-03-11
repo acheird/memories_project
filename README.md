@@ -1,8 +1,11 @@
-Memories - A MERN Stack Social Media App
+Event Sharing App - A MERN Stack Social Media App
 
-Memories is a full-stack social media application built using React, Node.js, Express, and MongoDB. 
-Users can create, update, delete, and like posts about memorable events in their lives.
+• Developed a social media platform for users to share events.
+• Built the front-end using React with Redux for state management and styled
+with Tailwind CSS.
+• Implemented the back-end using Node.js, Express, and MongoDB.
 
+Features
 
 - Create, Read, Update, and Delete (CRUD) posts
 - Like on posts
