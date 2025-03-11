@@ -1,9 +1,9 @@
 Event Sharing App - A MERN Stack Social Media App
 
-• Developed a social media platform for users to share events.
-• Built the front-end using React with Redux for state management and styled
+- Developed a social media platform for users to share events.
+- Built the front-end using React with Redux for state management and styled
 with Tailwind CSS.
-• Implemented the back-end using Node.js, Express, and MongoDB.
+- Implemented the back-end using Node.js, Express, and MongoDB.
 
 Features
 
